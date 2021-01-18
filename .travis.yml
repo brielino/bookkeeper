@@ -1,0 +1,6 @@
+nguage: java
+jdk:
+    - openjdk11
+
+script:
+  - mvn verify

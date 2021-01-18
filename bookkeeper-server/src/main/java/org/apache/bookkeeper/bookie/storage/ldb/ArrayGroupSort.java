@@ -26,7 +26,7 @@ import static com.google.common.base.Preconditions.checkArgument;
  * Sort an array of longs, grouping the items in tuples.
  *
  * <p>Group size decides how many longs are included in the tuples and key size controls how many items to use for
- * comparison.
+ * comparison.IllegalArgumentException
  */
 public class ArrayGroupSort {
 
