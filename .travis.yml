@@ -2,5 +2,10 @@ language: java
 jdk:
     - openjdk11
 
+addons:
+  sonarcloud:
+    organization: "brielino"
+    token: "6ffc9ae62b4a10bd98aff21bcbb624319ffd8f10"
+
 script:
-  - mvn verify
+  - mvn verify sonar:sonar -Dsonar.projectKey=brielino_bookkeeper
