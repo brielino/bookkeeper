@@ -120,9 +120,29 @@
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
     </dependency>
+    <dependency>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>1.4.11</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>1.4.11</version>
+        <configuration>
+            <targetClasses>
+                <param>org.apache.bookkeeper.bookie.storage.ldb.ArrayGroupSort</param>
+                <param>org.apache.bookkeeper.client.RoundRobinDistributionSchedule</param>
+            </targetClasses>
+            <targetTests>
+                <param>org.apache.bookkeeper.client.TestArrayGroupSort</param>
+                <param>org.apache.bookkeeper.client.TestRoundRobinDistributionSchedule</param>
+            </targetTests>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>

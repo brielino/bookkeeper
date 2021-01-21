@@ -1,3 +1,5 @@
+package org.apache.bookkeeper.client;
+
 import static org.junit.Assert.*;
 import static org.junit.Assume.assumeFalse;
 import static org.junit.Assume.assumeTrue;

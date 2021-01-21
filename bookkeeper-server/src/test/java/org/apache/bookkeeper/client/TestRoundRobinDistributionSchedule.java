@@ -1,3 +1,5 @@
+package org.apache.bookkeeper.client;
+
 import static org.junit.Assert.*;
 
 import java.util.BitSet;
