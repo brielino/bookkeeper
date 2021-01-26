@@ -28,6 +28,8 @@ public class TestRoundRobinDistributionSchedule {
 		}
 		//Coverage
 		assertTrue(rb.hasEntry(0, 3));
+		//Mutation
+		assertFalse(rb.hasEntry(1, 5));
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
@@ -50,8 +52,35 @@ public class TestRoundRobinDistributionSchedule {
 		rb = new RoundRobinDistributionSchedule(4,2,5);
 		BitSet b = rb.getEntriesStripedToTheBookie( 2, -2, -1);	
 	}
-	
-	
+	@Test(expected = IllegalArgumentException.class)
+	public void TryToStrongTesting() {
+		rb = new RoundRobinDistributionSchedule(4,2,5);
+		BitSet b = rb.getEntriesStripedToTheBookie( -7, -2, -1);	
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void WrongArgument() {
+		/* passo dei parametri errati */
+		rb = new RoundRobinDistributionSchedule(4,2,5);
+		BitSet b = rb.getEntriesStripedToTheBookie( 5, -2, 3);	
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void WrongArgument2() {
+		/* passo dei parametri errati */
+		rb = new RoundRobinDistributionSchedule(4,2,5);
+		BitSet b = rb.getEntriesStripedToTheBookie( -1, 3, -1);	
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void WrongArgument3() {
+		/* passo dei parametri errati */
+		rb = new RoundRobinDistributionSchedule(4,2,5);
+		BitSet b = rb.getEntriesStripedToTheBookie( -1, -1, 1);	
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void WrongArgument4() {
+		/* passo dei parametri errati */
+		rb = new RoundRobinDistributionSchedule(4,2,5);
+		BitSet b = rb.getEntriesStripedToTheBookie( -1, -1, -1);	
+	}
 	
 }
 
